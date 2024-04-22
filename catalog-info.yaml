@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: naval-tortoise-java-springboot-gitops
+  description: This is GitOps manifest for naval-tortoise-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: naval-tortoise-java-springboot
+    janus-idp.io/tekton: naval-tortoise-java-springboot 
+    backstage.io/kubernetes-id: naval-tortoise-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:naval-tortoise-java-springboot
